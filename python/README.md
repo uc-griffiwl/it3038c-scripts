@@ -9,7 +9,7 @@ import time
 import random
 ```
 # Score
-setting up variables for the score board and setting the delay.
+This sets up variables for the score board and setting the delay.
 ```javascript
 delay = 0.1
 
@@ -25,3 +25,25 @@ wn.bgcolor("Magenta")
 wn.setup(width=600, height=600)
 wn.tracer(0) 
 ```
+# Snake Head
+This code allows us to customize the snakes head.
+``` javascript
+head = turtle.Turtle()
+head.speed(0)
+head.shape("triangle")
+head.color("cyan")
+head.penup()
+head.goto(0,0)
+head.direction = "stop"
+```
+# Snake Food
+This code allows us to customize the snakes food.
+``` javascript
+food = turtle.Turtle()
+food.speed(0)
+food.shape("circle")
+food.color("white")
+food.penup()
+head.goto(0,100)
+```
+
