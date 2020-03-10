@@ -121,4 +121,34 @@ if head.xcor()>290 or head.xcor()<-290 or head.ycor()>290 or head.ycor()<-290:
         time.sleep(1)
         head.goto(0,0)
         head.direction ="stop"
-        ```
+```
+# Hides segments
+This hides segments of the snake before they are earned for eating the food.
+```javascript
+for segment in segments:
+        segment.goto(1000,1000)
+```
+# Clear segment list
+This code clears segments added to the snake body
+```javascript
+segments.clear()
+```
+# Reset Score and Delay
+This code resets the score and delay 
+```javascript
+score = 0
+delay = 0.1
+```
+# Snake eating food
+This code allows the snake head to collide with the food
+```javascript
+if head.distance(food) < 20:
+```
+# Food moves to random spot on the map
+This code moves the food at random around the gaming window.
+```javascript
+x = random.randint(-290,290)
+        y= random.randint(-290,290)
+        food.goto(x,y)
+```
+
