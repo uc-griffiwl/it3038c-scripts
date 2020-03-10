@@ -46,4 +46,20 @@ food.color("white")
 food.penup()
 head.goto(0,100)
 ```
-
+# Segments
+This line of code is a list command that will add a segment to the snake based on some code below in the main loop.
+```javascript
+segments = []
+```
+# Snake Body 
+This code allows us to customize the snakes body and update the scoreboard when it adds a body part.
+```javascript
+pen = turtle.Turtle()
+pen.speed(0)
+pen.shape("square")
+pen.color("orange")
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 260)
+pen.write("Score: 0 High Score 0", align="center", font=("Chiller", 20, "normal"))
+```
