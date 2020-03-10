@@ -99,3 +99,18 @@ def move():
         x = head.xcor()
         head.setx(x + 20)
 ```
+# Keyboard Bindings
+This codes allows w, s, a, d keys to be bind to the game window in order to move the snake.
+```javascript
+wn.listen()
+wn.onkeypress(go_up, "w")
+wn.onkeypress(go_down, "s")
+wn.onkeypress(go_left, "a")
+wn.onkeypress(go_right, "d")
+```
+# Main Game Loop
+This code says that while the game window is open, update the game.
+```javascript
+while True:
+    wn.update()
+   ```
