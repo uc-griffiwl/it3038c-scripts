@@ -174,3 +174,11 @@ score +=10
         pen.clear()
         pen.write("Score: {} High Score {}".format(score, high_score), align ="center", font=("Chiller", 20, "normal"))
 ```
+# Moving the Snakes body
+This codes for loop explains how the snakes body moves in reverse order.
+```javascript
+for index in range(len(segments)-1, 0, -1):
+        x = segments[index-1].xcor()
+        y = segments[index-1].ycor()
+        segments[index].goto(x, y)
+    ```
