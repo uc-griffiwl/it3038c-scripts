@@ -219,3 +219,10 @@ for segment in segments:
             pen.clear()
             pen.write("Score {} High Score {}".format(score, high_score), align="center", font=("Chiller", 20, "normal"))
 ```
+# Ending of Code
+This code ends the delay and mainloop.
+```javascript
+    time.sleep(delay)
+
+wn.mainloop()
+```
