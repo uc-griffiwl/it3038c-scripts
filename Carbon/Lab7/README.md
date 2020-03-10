@@ -22,7 +22,11 @@ Get IPv4 and IPv6 IP addresses of the local machine.
 Get-IPAddress -V4
 Get-IPAddress -V6
 ```
-
+Zip and Unzip folders in Windows Directory (I used sample files to do this in the commands you will need to replace the locations with locations of files on your local machine).
+```javascript
+Compress-Item -Path 'C:\it3038c-scripts\Carbon\Lab7\Test1.txt' -OutFile 'C:\it3038c-scripts\Carbon\Lab7\Test1.zip'
+Expand-Item -Path 'C:\it3038c-scripts\Carbon\Lab7\Test1.zip' -OutDirectory 'C:\it3038c-scripts\Carbon\Lab7' -Force
+```
 
 
 
