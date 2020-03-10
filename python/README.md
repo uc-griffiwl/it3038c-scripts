@@ -129,26 +129,48 @@ for segment in segments:
         segment.goto(1000,1000)
 ```
 # Clear segment list
-This code clears segments added to the snake body
+This code clears segments added to the snake body.
 ```javascript
 segments.clear()
 ```
 # Reset Score and Delay
-This code resets the score and delay 
+This code resets the score and delay. 
 ```javascript
 score = 0
 delay = 0.1
 ```
 # Snake eating food
-This code allows the snake head to collide with the food
+This code allows the snake head to collide with the food.
 ```javascript
 if head.distance(food) < 20:
 ```
-# Food moves to random spot on the map
+# Food Regenerating
 This code moves the food at random around the gaming window.
 ```javascript
 x = random.randint(-290,290)
         y= random.randint(-290,290)
         food.goto(x,y)
 ```
+# Adding to the snake body
+This code allows us to customize the snake body after it eats the food.
+```javascript
+new_segment = turtle.Turtle()
+        new_segment.speed(0)
+        new_segment.shape("square")
+        new_segment.color("orange")
+        new_segment.penup()
+        segments.append(new_segment)
+```
+# Update Score
+This code will shorten the delay and increase the score and reflect the change on the scoreboard.
+```javascript
+delay -= 0.001
 
+score +=10
+
+        if score > high_score:
+            high_score = score
+
+        pen.clear()
+        pen.write("Score: {} High Score {}".format(score, high_score), align ="center", font=("Chiller", 20, "normal"))
+```
