@@ -9,10 +9,19 @@ import time
 import random
 ```
 # Score
-seting up variables for the score board and setting the delay.
+setting up variables for the score board and setting the delay.
 ```javascript
 delay = 0.1
 
 score = 0
 high_score = 0
+```
+# Gaming Window
+This code will allow us to customize the window that the snake game will be played in.
+``` javascript
+wn = turtle.Screen()
+wn.title("Wade's sneaky snake game")
+wn.bgcolor("Magenta")
+wn.setup(width=600, height=600)
+wn.tracer(0) 
 ```
