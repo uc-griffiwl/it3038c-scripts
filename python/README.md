@@ -181,4 +181,41 @@ for index in range(len(segments)-1, 0, -1):
         x = segments[index-1].xcor()
         y = segments[index-1].ycor()
         segments[index].goto(x, y)
-    ```
+```
+# Snake body placement
+This if statment explains how the snake body will start to grow from the snakes head and expand the body upon that.
+```javascript
+if len(segments) > 0:
+        x = head.xcor()
+        y = head.ycor()
+        segments[0].goto(x,y)
+```
+# Move
+This allows the Snake to move.
+```javascript
+move()
+```
+# Snake Head hitting the body
+This code explains how the game checks to see if the snake head collides with the snake body.
+```javascript
+for segment in segments:
+        if segment.distance(head) <20:
+            time.sleep(1)
+            head.goto(0,0)
+            head.direction = "stop"
+```
+# Post move code
+This code explains how we hide segments, clear segments, reset score, reset delay, and update the score.
+```javascript
+for segment in segments:
+                segment.goto(1000, 1000)
+                
+            segments.clear()
+
+            score = 0
+
+            delay = 0.1
+
+            pen.clear()
+            pen.write("Score {} High Score {}".format(score, high_score), align="center", font=("Chiller", 20, "normal"))
+```
