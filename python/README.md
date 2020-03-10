@@ -114,3 +114,11 @@ This code says that while the game window is open, update the game.
 while True:
     wn.update()
    ```
+# Setting collisions with the Border
+This codes sets the boundries to the gaming window so the game will end if you hit the border.
+```javascript
+if head.xcor()>290 or head.xcor()<-290 or head.ycor()>290 or head.ycor()<-290:
+        time.sleep(1)
+        head.goto(0,0)
+        head.direction ="stop"
+        ```
