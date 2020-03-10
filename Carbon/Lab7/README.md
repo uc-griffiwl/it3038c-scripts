@@ -12,12 +12,16 @@ Import-Module 'Carbon'
 ```
 # Features
 
-Get the information of Local users and information for the administrator of the computer
+Get the information of Local users and information for the administrator of the machine.
 ```javascript
 Get-User 
 Get-WmiLocalUserAccount -Username Administrator
 ```
-
+Get IPv4 and IPv6 IP addresses of the local machine.
+```javascript
+Get-IPAddress -V4
+Get-IPAddress -V6
+```
 
 
 
