@@ -8,3 +8,11 @@ import turtle
 import time
 import random
 ```
+#Score
+seting up variables for the score board and setting the delay.
+```javascript
+delay = 0.1
+
+score = 0
+high_score = 0
+```
