@@ -1,0 +1,50 @@
+(webscraping) PS C:\it3038c-scripts\python> python .\Lab8.py
+Item For The Brand Flag has the price
+    $30.00
+   and the color options
+Color
+
+
+
+
+                      Black/White
+
+
+
+
+
+
+
+                      Black/Orange
+
+
+
+
+
+
+
+                      Black/Red
+
+
+
+
+
+
+
+                      Black/Yellow
+
+
+
+
+
+
+
+                      Blue/White
+
+
+
+
+
+
+
+                      Blue/Yellow
