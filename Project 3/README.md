@@ -139,3 +139,16 @@ def fire_bullet():
 		bulletstate = "fire"
 ```
 # Move the bullet to the just above the player
+This code will place make the bullet shoot out the end point of the triangle.
+``` javascript
+x = player.xcor()
+y = player.ycor() + 10
+bullet.setposition(x, y)
+bullet.showturtle()
+def isCollision(t1, t2):
+	distance = math.sqrt(math.pow(t1.xcor()-t2.xcor(),2)+math.pow(t1.ycor()-t2.ycor(),2))
+	if distance < 15:
+		return True
+	else:
+		return False
+```
