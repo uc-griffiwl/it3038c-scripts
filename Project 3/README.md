@@ -161,7 +161,7 @@ turtle.onkey(move_right, "Right")
 turtle.onkey(fire_bullet, "space")
 ```
 # Main Game Loop
-This code is what runs the game, moves the enemies, checks for colliosn with bullet and enemy, resets the bullets, updates the scoreboard, moves the bullet, and checks to see if the bullet is out the border at the top. The main game loop has a lot going on and combines all these elements.
+This code is what runs the game, moves the enemies, checks for colliosn with bullet and enemy, resets the bullets, updates the scoreboard, moves the bullet, checks to see if the bullet is out the border at the top, and then lastly will reset the game. The main game loop has a lot going on and combines all these elements.
 ``` javascript
 while True:
 	
@@ -223,4 +223,6 @@ while True:
 	if bullet.ycor() > 275:
 		bullet.hideturtle()
 		bulletstate = "ready"
+		
+delay = raw_input("Press enter to finsh.")
 ```
