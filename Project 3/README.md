@@ -6,3 +6,11 @@ Python: https://www.python.org/downloads/
 VSCode: https://code.visualstudio.com/download
 # How to Run
 After you have Python and VSCode installed. Open the Square Invaders.py file in VSCode and then right click on the code and click "Run Python file in Terminal" then you will be able to play the Square Invaders!
+# Modules
+You have to Import these modules in order to get the Snake game to work.
+``` javascript
+import turtle
+import os
+import math
+import random
+```
