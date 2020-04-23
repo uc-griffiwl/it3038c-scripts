@@ -41,3 +41,57 @@ This code will set the scoreboard zero.
 ``` javascript
 score = 0
 ```
+# Draw the scoreboard
+This code will setup the scoreboard and keep track of the score.
+``` javascript
+score_pen = turtle.Turtle()
+score_pen.speed(0)
+score_pen.color("white")
+score_pen.penup()
+score_pen.setposition(-290, 280)
+scorestring = "Score: %s" %score
+score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
+score_pen.hideturtle()
+```
+# Create the player turtle
+This code creates the lone triangle character you have to make survive the squares!
+``` javascript
+player = turtle.Turtle()
+player.color("blue")
+player.shape("triangle")
+player.penup()
+player.speed(0)
+player.setposition(0, -250)
+player.setheading(90)
+
+playerspeed = 15
+```
+# Choose A Number of Enemies
+This code will create the amount of enemies your triangle will be facing.
+``` javascript
+number_of_enemies = 5
+```
+# Create an empty list of enemies
+This code will create a list of emenmies.
+``` javascript
+enemies = []
+```
+# Add enemies to the list
+This code will add enemies to the list and allow you to customize your enemies.
+``` javascript
+for i in range(number_of_enemies):
+	#Create the enemy
+	enemies.append(turtle.Turtle())
+
+for enemy in enemies:
+	enemy.color("red")
+	enemy.shape("square")
+	enemy.penup()
+	enemy.speed(0)
+	x = random.randint(-200, 200)
+	y = random.randint(100, 250)
+	enemy.setposition(x, y)
+
+enemyspeed = 2
+
+```
