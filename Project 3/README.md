@@ -93,5 +93,49 @@ for enemy in enemies:
 	enemy.setposition(x, y)
 
 enemyspeed = 2
-
 ```
+# Create the player's bullet
+This code allows us to create and customize the triangle's bullets.
+``` javascript
+bullet = turtle.Turtle()
+bullet.color("yellow")
+bullet.shape("circle")
+bullet.penup()
+bullet.speed(0)
+bullet.setheading(90)
+bullet.shapesize(0.5, 0.5)
+bullet.hideturtle()
+
+bulletspeed = 20
+```
+# Define bullet state
+This code allows the bullet to be shot at the squares.
+``` javascript
+bulletstate = "ready"
+```
+# Move the player left and right
+This code allows you to move your triangle left and right of the screen.
+``` javascript
+def move_left():
+	x = player.xcor()
+	x -= playerspeed
+	if x < -280:
+		x = - 280
+	player.setx(x)
+	
+def move_right():
+	x = player.xcor()
+	x += playerspeed
+	if x > 280:
+		x = 280
+	player.setx(x)
+```
+# Declare the bulletstate global
+This code will allow your bullet to shoot from anywhere in the border.
+``` javascript
+def fire_bullet():
+	global bulletstate
+	if bulletstate == "ready":
+		bulletstate = "fire"
+```
+# Move the bullet to the just above the player
