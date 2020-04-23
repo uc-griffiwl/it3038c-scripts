@@ -152,3 +152,75 @@ def isCollision(t1, t2):
 	else:
 		return False
 ```
+# Create keyboard bindings
+This code bind the game controls to buttons on your keyboard.
+``` javascript
+turtle.listen()
+turtle.onkey(move_left, "Left")
+turtle.onkey(move_right, "Right")
+turtle.onkey(fire_bullet, "space")
+```
+# Main Game Loop
+This code is what runs the game, moves the enemies, checks for colliosn with bullet and enemy, resets the bullets, updates the scoreboard, moves the bullet, and checks to see if the bullet is out the border at the top. The main game loop has a lot going on and combines all these elements.
+``` javascript
+while True:
+	
+	for enemy in enemies:
+		#Move the enemy
+		x = enemy.xcor()
+		x += enemyspeed
+		enemy.setx(x)
+
+		#Move the enemy back and down
+		if enemy.xcor() > 280:
+			#Move all enemies down
+			for e in enemies:
+				y = e.ycor()
+				y -= 40
+				e.sety(y)
+			#Change enemy direction
+			enemyspeed *= -1
+		
+		if enemy.xcor() < -280:
+			#Move all enemies down
+			for e in enemies:
+				y = e.ycor()
+				y -= 40
+				e.sety(y)
+			#Change enemy direction
+			enemyspeed *= -1
+			
+		#Check for a collision between the bullet and the enemy
+		if isCollision(bullet, enemy):
+			#Reset the bullet
+			bullet.hideturtle()
+			bulletstate = "ready"
+			bullet.setposition(0, -400)
+			#Reset the enemy
+			x = random.randint(-200, 200)
+			y = random.randint(100, 250)
+			enemy.setposition(x, y)
+			#Update the score
+			score += 10
+			scorestring = "Score: %s" %score
+			score_pen.clear()
+			score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
+		
+		if isCollision(player, enemy):
+			player.hideturtle()
+			enemy.hideturtle()
+			print ("Game Over")
+			break
+
+		
+	#Move the bullet
+	if bulletstate == "fire":
+		y = bullet.ycor()
+		y += bulletspeed
+		bullet.sety(y)
+	
+	#Check to see if the bullet has gone to the top
+	if bullet.ycor() > 275:
+		bullet.hideturtle()
+		bulletstate = "ready"
+```
